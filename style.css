@@ -331,7 +331,7 @@ header .follow a:hover{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap:1.5rem;
+    gap:5.5rem 3.5rem;
 }
 
 .service .box-container .box{
