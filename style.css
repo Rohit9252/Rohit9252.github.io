@@ -423,7 +423,7 @@ header .follow a:hover{
 
 .portfolio .box-container .box{
     flex:1 1 30rem;
-    height:25rem;
+    height:45rem;
     position: relative;
     overflow:hidden;
     border:1rem solid #fff;
@@ -433,7 +433,7 @@ header .follow a:hover{
 }
 
 .portfolio .box-container .box img{
-    height:100%;
+    height:70%;
     width:100%;
     object-fit: cover;
     border-radius: .5rem;
@@ -567,6 +567,12 @@ header .follow a:hover{
     margin-top: 0;
     margin-bottom: 1.5rem;
 }
+.my2{
+    margin-top: 40px;
+}
+/* .project{
+    height: 40vh;
+} */
 
 .footer{
     margin-top: 2rem;
@@ -654,8 +660,14 @@ header .follow a:hover{
     letter-spacing: 1p;
 
 }
+/* .tech{
+    width: 100px;
+    height: 100px;
+} */
 
-
+/* .project{
+    height: 40rem;
+} */
 
 
 
