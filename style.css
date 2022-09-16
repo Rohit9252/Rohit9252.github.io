@@ -335,12 +335,12 @@ header .follow a:hover{
 }
 
 .service .box-container .box{
-    flex:1 1 30rem;
+    flex: 0 0 12rem;
     text-align: center;
-    padding:2rem;
-    background:#fff;
-    border-radius: .5rem;
-    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 1rem;
+    background: #fff;
+    border-radius: 1.9rem;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
 }
 
 .service .box-container .box i{
@@ -442,8 +442,8 @@ header .follow a:hover{
 }
 
 .portfolio .box-container .box:hover img{
-    height:75%;
-    width:75%;
+    height:80%;
+    width:90%;
 }
 
 .portfolio .box-container .box h3{
