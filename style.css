@@ -335,12 +335,13 @@ header .follow a:hover{
 }
 
 .service .box-container .box{
-    flex: 0 0 12rem;
-    text-align: center;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 1.9rem;
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+
+        flex: 1 1 13rem;
+        text-align: center;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 1.9rem;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
 }
 
 .service .box-container .box i{
@@ -442,8 +443,8 @@ header .follow a:hover{
 }
 
 .portfolio .box-container .box:hover img{
-    height:80%;
-    width:90%;
+    height:70%;
+    width:80%;
 }
 
 .portfolio .box-container .box h3{
@@ -649,7 +650,10 @@ header .follow a:hover{
     font-size: 35px;
 
 }
-
+.tech-heading{
+    font-weight: bold;
+    color: #444;
+}
  .percent .number h2 span{
     font-size: 14px;
 }
