@@ -673,7 +673,9 @@ header .follow a:hover{
     height: 40rem;
 } */
 
-
+.iconpic{
+    object-fit: cover;
+}
 
 
 
