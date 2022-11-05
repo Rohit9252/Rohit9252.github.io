@@ -135,6 +135,7 @@ header .follow a:hover{
     opacity: .3;
 } */
 
+
 .cursor-2{
     position: absolute;
     top:0; left:0;
@@ -442,10 +443,10 @@ header .follow a:hover{
     z-index: 1;
 }
 
-.portfolio .box-container .box:hover img{
+/* .portfolio .box-container .box:hover img{
     height:70%;
     width:82%;
-}
+} */
 
 .portfolio .box-container .box h3{
     position: absolute;
@@ -456,8 +457,10 @@ header .follow a:hover{
 }
 
 .portfolio .box-container .box .icons{
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top:1rem; right:1rem;
+    top:48rem; right:3rem;
 }
 
 .portfolio .box-container .box .icons a{
@@ -471,6 +474,7 @@ header .follow a:hover{
     line-height: 4rem;
     text-align: center;
     margin-bottom: 1rem;
+    margin-right: 3rem;
 }
 
 .portfolio .box-container .box .icons a:hover{
