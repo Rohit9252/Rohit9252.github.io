@@ -128,8 +128,8 @@ header .follow a:hover{
     border-radius: 50%;
     z-index: 10000;
 }
-
-/* .cursor-1.active{
+/* 
+.cursor-1.active{
     height:7rem;
     width:7rem;
     opacity: .3;
@@ -424,7 +424,7 @@ header .follow a:hover{
 }
 
 .portfolio .box-container .box{
-    flex:1 1 30rem;
+    flex:1 1 32rem;
     height:60rem;
     position: relative;
     overflow:hidden;
@@ -682,7 +682,14 @@ header .follow a:hover{
     object-fit: cover;
 }
 
+.my3{
+    margin-top: 15px;
+}
 
+
+.nd{
+    object-fit: contain;
+}
 
 /* media queries  */
 @media (max-width:991px){
