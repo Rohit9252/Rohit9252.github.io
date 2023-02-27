@@ -25,7 +25,12 @@ Technologies
  Java
  Spring Boot
  MySQL
+ 
+ 
+ 
 * # Deployment
  Docker
+ 
+ 
 # Contact
 Thank you for visiting my portfolio! If you have any questions or would like to discuss potential collaboration, please don't hesitate to reach out to me at rohitbatar0165@gmail.com
