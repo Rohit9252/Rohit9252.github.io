@@ -21,7 +21,7 @@ Technologies
   JavaScript
   React
   
-* #Back-end Development 
+* # Back-end Development 
  Java
  Spring Boot
  MySQL
