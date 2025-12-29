@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CMultiSelectOptions customize 1`] = `
+<div>
+  <div
+    class="form-multi-select-options"
+    style="max-height: 200; overflow: scroll;"
+  >
+    <div
+      class="form-multi-select-option form-multi-select-option-with-checkbox disabled"
+      tabindex="0"
+    >
+      text1
+    </div>
+    <div
+      class="form-multi-select-option form-multi-select-option-with-checkbox"
+      tabindex="0"
+    >
+      text3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`loads and displays CMultiSelectOptions component 1`] = `
+<div>
+  <div
+    class="form-multi-select-options"
+    style="overflow: scroll;"
+  >
+    <div
+      class="form-multi-select-options-empty"
+    >
+      some no result label
+    </div>
+  </div>
+</div>
+`;

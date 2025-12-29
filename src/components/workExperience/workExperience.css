@@ -1,0 +1,350 @@
+#work-experience {
+  width: 85%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.experience-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+/* Timeline Styles */
+.experience-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-variant));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.75rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--color-bg-variant);
+  border: 3px solid var(--color-primary-variant);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-item.active .timeline-dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.timeline-content {
+  background: var(--color-bg-variant);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content,
+.timeline-item.active .timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary-variant);
+  transform: translateX(10px);
+  box-shadow: var(--shadow-medium);
+}
+
+.timeline-content h3 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.duration {
+  color: var(--color-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Experience Details */
+.experience-details {
+  position: relative;
+}
+
+.experience-card {
+  background: var(--color-bg-variant);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-light);
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.experience-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-info h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.company-info h3 {
+  color: var(--color-white);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-light);
+  font-size: 0.95rem;
+}
+
+.meta-icon {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.experience-description {
+  margin-bottom: 2rem;
+}
+
+.experience-description p {
+  color: var(--color-light);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.experience-section {
+  margin-bottom: 2rem;
+}
+
+.experience-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-icon {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.responsibilities-list,
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities-list li,
+.achievements-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-light);
+  line-height: 1.6;
+}
+
+.responsibilities-list li::before,
+.achievements-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, var(--color-primary), #60a5fa);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  #work-experience {
+    width: 90%;
+  }
+  
+  .experience-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .experience-timeline {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    padding-left: 0;
+  }
+  
+  .experience-timeline::before {
+    display: none;
+  }
+  
+  .timeline-item {
+    min-width: 250px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .timeline-dot {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .timeline-item:hover .timeline-content,
+  .timeline-item.active .timeline-content {
+    transform: translateY(-5px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #work-experience {
+    width: 92%;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .experience-card {
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+  }
+
+  .experience-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .company-info h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .company-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .experience-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .experience-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .experience-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .responsibilities-list li,
+  .achievements-list li {
+    font-size: 0.95rem;
+    padding-left: 1.3rem;
+  }
+
+  .tech-stack {
+    gap: 0.6rem;
+  }
+
+  .tech-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .timeline-item {
+    min-width: 220px;
+  }
+
+  .timeline-content {
+    padding: 1.2rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+  }
+}

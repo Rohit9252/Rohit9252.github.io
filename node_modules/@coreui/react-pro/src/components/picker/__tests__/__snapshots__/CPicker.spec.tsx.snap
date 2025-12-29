@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loads and displays CPicker component 1`] = `
+<div>
+  <div
+    class="dropdown picker"
+  >
+    <button
+      aria-expanded="false"
+      class="btn btn-primary dropdown-toggle"
+      tabindex="0"
+      type="button"
+    />
+    <div
+      aria-hidden="true"
+      class="dropdown-menu"
+      role="menu"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;

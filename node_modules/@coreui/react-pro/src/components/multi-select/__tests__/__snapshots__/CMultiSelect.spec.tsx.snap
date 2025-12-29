@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CMultiSelect customize 1`] = `
+<div>
+  <select
+    class="multi-select-new"
+    multiple=""
+    style="display: none;"
+    tabindex="-1"
+  >
+    <option
+      value="1"
+    >
+      Bootstrap
+    </option>
+    <option
+      value="3"
+    >
+      Vue.js
+    </option>
+    <option
+      disabled=""
+      value="6"
+    >
+      Node.js
+    </option>
+  </select>
+  <div
+    aria-expanded="true"
+    class="form-multi-select show bazinga"
+  >
+    <div
+      class="form-multi-select-toggler"
+    >
+      <span
+        class="form-multi-select-selection form-multi-select-selection-tags"
+      >
+        <span
+          class="form-multi-select-tag"
+        >
+          Bootstrap
+          <button
+            aria-label="Close"
+            class="form-multi-select-tag-delete"
+          >
+            <span
+              aria-hidden="true"
+            >
+              ×
+            </span>
+          </button>
+        </span>
+        <span
+          class="form-multi-select-tag"
+        >
+          Vue.js
+          <button
+            aria-label="Close"
+            class="form-multi-select-tag-delete"
+          >
+            <span
+              aria-hidden="true"
+            >
+              ×
+            </span>
+          </button>
+        </span>
+        <span
+          class="form-multi-select-tag"
+        >
+          Node.js
+        </span>
+        <input
+          autocomplete="off"
+          class="form-multi-select-search"
+          size="2"
+          type="text"
+        />
+      </span>
+      <div
+        class="form-multi-select-buttons"
+      >
+        <button
+          class="form-multi-select-cleaner"
+          type="button"
+        />
+        <button
+          class="form-multi-select-indicator"
+          type="button"
+        />
+      </div>
+    </div>
+    <div
+      class="form-multi-select-dropdown"
+      role="menu"
+      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+    >
+      <button
+        class="form-multi-select-all"
+        type="button"
+      >
+        selectAllLabel
+      </button>
+      <div
+        class="form-multi-select-options"
+        style="max-height: 150px; overflow: scroll;"
+      >
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox"
+          tabindex="0"
+        >
+          Angular
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox form-multi-selected"
+          tabindex="0"
+        >
+          Bootstrap
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox"
+          tabindex="0"
+        >
+          React.js
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox form-multi-selected"
+          tabindex="0"
+        >
+          Vue.js
+        </div>
+        <div
+          class="form-multi-select-optgroup-label"
+        >
+          backend
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox"
+          tabindex="0"
+        >
+          Django
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox"
+          tabindex="0"
+        >
+          Laravel
+        </div>
+        <div
+          class="form-multi-select-option form-multi-select-option-with-checkbox form-multi-selected disabled"
+          tabindex="0"
+        >
+          Node.js
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`loads and displays CMultiSelect component 1`] = `
+<div>
+  <select
+    class="multi-select-new"
+    multiple=""
+    style="display: none;"
+    tabindex="-1"
+  />
+  <div
+    aria-expanded="false"
+    class="form-multi-select"
+  >
+    <div
+      class="form-multi-select-toggler"
+    >
+      <span
+        class="form-multi-select-selection form-multi-select-selection-tags"
+      >
+        <input
+          autocomplete="off"
+          class="form-multi-select-search"
+          placeholder="Select..."
+          type="text"
+        />
+      </span>
+      <div
+        class="form-multi-select-buttons"
+      >
+        <button
+          class="form-multi-select-indicator"
+          type="button"
+        />
+      </div>
+    </div>
+    <div
+      class="form-multi-select-dropdown"
+      role="menu"
+    >
+      <button
+        class="form-multi-select-all"
+        type="button"
+      >
+        Select all options
+      </button>
+      <div
+        class="form-multi-select-options"
+      >
+        <div
+          class="form-multi-select-options-empty"
+        >
+          No results found
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,135 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065f46;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="potGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#92400e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a16207;stop-opacity:1" />
+    </linearGradient>
+    <filter id="plantShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#plantGrad)" rx="16"/>
+  
+  <!-- Leaf Icon -->
+  <g transform="translate(320, 25)">
+    <circle cx="25" cy="25" r="18" fill="rgba(255,255,255,0.2)"/>
+    <path d="M20 15c-4 0-8 4-8 8 0 2 1 4 2 5l6-6 6 6c1-1 2-3 2-5 0-4-4-8-8-8z" fill="white"/>
+    <path d="M20 23l4 4" stroke="white" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main Plant Showcase -->
+  <rect x="40" y="50" width="320" height="170" fill="rgba(255,255,255,0.95)" rx="16" filter="url(#plantShadow)"/>
+  
+  <!-- Three Plant Pots -->
+  <g transform="translate(60, 80)">
+    <!-- Plant 1 -->
+    <g>
+      <!-- Pot -->
+      <path d="M10 90h40l-4 40h-32l-4-40z" fill="url(#potGrad)"/>
+      <!-- Soil -->
+      <ellipse cx="30" cy="92" rx="20" ry="4" fill="#8b4513"/>
+      <!-- Plant Stem -->
+      <rect x="29" y="70" width="2" height="25" fill="#16a34a"/>
+      <!-- Leaves -->
+      <ellipse cx="25" cy="75" rx="8" ry="5" fill="url(#leafGrad)" transform="rotate(-30 25 75)"/>
+      <ellipse cx="35" cy="68" rx="10" ry="6" fill="url(#leafGrad)" transform="rotate(20 35 68)"/>
+      <ellipse cx="22" cy="62" rx="7" ry="4" fill="url(#leafGrad)" transform="rotate(-45 22 62)"/>
+      <!-- Price -->
+      <rect x="15" y="140" width="30" height="15" fill="#22c55e" rx="3"/>
+      <text x="23" y="150" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">$25</text>
+    </g>
+    
+    <!-- Plant 2 -->
+    <g transform="translate(80, 0)">
+      <!-- Pot -->
+      <path d="M10 90h40l-4 40h-32l-4-40z" fill="url(#potGrad)"/>
+      <!-- Soil -->
+      <ellipse cx="30" cy="92" rx="20" ry="4" fill="#8b4513"/>
+      <!-- Plant Stem -->
+      <rect x="29" y="65" width="2" height="30" fill="#16a34a"/>
+      <!-- Leaves -->
+      <ellipse cx="20" cy="70" rx="12" ry="8" fill="url(#leafGrad)" transform="rotate(-25 20 70)"/>
+      <ellipse cx="40" cy="65" rx="10" ry="6" fill="url(#leafGrad)" transform="rotate(35 40 65)"/>
+      <ellipse cx="30" cy="55" rx="8" ry="5" fill="url(#leafGrad)"/>
+      <!-- Flowers -->
+      <circle cx="25" cy="58" r="3" fill="#ef4444"/>
+      <circle cx="35" cy="52" r="3" fill="#f59e0b"/>
+      <!-- Price -->
+      <rect x="15" y="140" width="30" height="15" fill="#22c55e" rx="3"/>
+      <text x="23" y="150" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">$35</text>
+    </g>
+    
+    <!-- Plant 3 -->
+    <g transform="translate(160, 0)">
+      <!-- Pot -->
+      <path d="M10 90h40l-4 40h-32l-4-40z" fill="url(#potGrad)"/>
+      <!-- Soil -->
+      <ellipse cx="30" cy="92" rx="20" ry="4" fill="#8b4513"/>
+      <!-- Cactus Body -->
+      <ellipse cx="30" cy="75" rx="8" ry="20" fill="#22c55e"/>
+      <!-- Cactus Arms -->
+      <ellipse cx="20" cy="80" rx="4" ry="8" fill="#22c55e"/>
+      <ellipse cx="40" cy="85" rx="4" ry="6" fill="#22c55e"/>
+      <!-- Spines -->
+      <g stroke="#065f46" stroke-width="0.5" fill="none">
+        <line x1="26" y1="65" x2="24" y2="63"/>
+        <line x1="30" y1="62" x2="30" y2="60"/>
+        <line x1="34" y1="65" x2="36" y2="63"/>
+        <line x1="25" y1="75" x2="23" y2="75"/>
+        <line x1="35" y1="78" x2="37" y2="78"/>
+      </g>
+      <!-- Price -->
+      <rect x="15" y="140" width="30" height="15" fill="#22c55e" rx="3"/>
+      <text x="23" y="150" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">$18</text>
+    </g>
+  </g>
+  
+  <!-- Shopping Cart -->
+  <g transform="translate(280, 90)">
+    <circle cx="20" cy="20" r="15" fill="rgba(34, 197, 94, 0.1)"/>
+    <path d="M12 15h4l2 8h-8l2-8zm1-2v-2c0-1 1-2 2-2h2c1 0 2 1 2 2v2" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+    <circle cx="15" cy="28" r="1.5" fill="#22c55e"/>
+    <circle cx="23" cy="28" r="1.5" fill="#22c55e"/>
+    <text x="10" y="50" fill="#065f46" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Add to Cart</text>
+  </g>
+  
+  <!-- API Endpoints -->
+  <g transform="translate(60, 190)">
+    <circle cx="5" cy="5" r="2" fill="#22c55e"/>
+    <text x="12" y="9" fill="#065f46" font-family="Arial, sans-serif" font-size="8">GET /plants</text>
+    
+    <circle cx="80" cy="5" r="2" fill="#3b82f6"/>
+    <text x="87" y="9" fill="#065f46" font-family="Arial, sans-serif" font-size="8">POST /orders</text>
+    
+    <circle cx="160" cy="5" r="2" fill="#f59e0b"/>
+    <text x="167" y="9" fill="#065f46" font-family="Arial, sans-serif" font-size="8">Spring Boot</text>
+    
+    <circle cx="240" cy="5" r="2" fill="#8b5cf6"/>
+    <text x="247" y="9" fill="#065f46" font-family="Arial, sans-serif" font-size="8">MySQL</text>
+  </g>
+  
+  <!-- Header -->
+  <text x="60" y="75" fill="#065f46" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Plant Nursery Store</text>
+  
+  <!-- Features -->
+  <g transform="translate(40, 225)">
+    <circle cx="8" cy="8" r="2" fill="#10b981"/>
+    <text x="16" y="12" fill="white" font-family="Arial, sans-serif" font-size="8">5-Member Team</text>
+    
+    <circle cx="120" cy="8" r="2" fill="#059669"/>
+    <text x="128" y="12" fill="white" font-family="Arial, sans-serif" font-size="8">REST API</text>
+    
+    <circle cx="200" cy="8" r="2" fill="#047857"/>
+    <text x="208" y="12" fill="white" font-family="Arial, sans-serif" font-size="8">Group Project</text>
+  </g>
+</svg>

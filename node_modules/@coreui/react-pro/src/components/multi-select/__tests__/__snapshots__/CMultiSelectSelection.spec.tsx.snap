@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CMultiSelectSelection customize counter 1`] = `
+<div>
+  <span
+    class="form-multi-select-selection"
+  >
+    2 text
+  </span>
+</div>
+`;
+
+exports[`CMultiSelectSelection customize tags 1`] = `
+<div>
+  <span
+    class="form-multi-select-selection form-multi-select-selection-tags"
+  >
+    <span
+      class="form-multi-select-tag"
+    >
+      text1
+      <button
+        aria-label="Close"
+        class="form-multi-select-tag-delete"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ×
+        </span>
+      </button>
+    </span>
+    <span
+      class="form-multi-select-tag"
+    >
+      text2
+    </span>
+  </span>
+</div>
+`;
+
+exports[`CMultiSelectSelection customize text 1`] = `
+<div>
+  <span
+    class="form-multi-select-selection"
+  >
+    text1, text2
+  </span>
+</div>
+`;
+
+exports[`loads and displays CMultiSelectSelection component 1`] = `
+<div>
+  <span
+    class="form-multi-select-selection"
+  />
+</div>
+`;

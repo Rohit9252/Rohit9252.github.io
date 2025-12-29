@@ -1,0 +1,123 @@
+.TOP__one {
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.TOP__one>div:first-child {
+  width: 50%;
+  text-align: center;
+  /* border: 3px solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Scroll__down {
+  display: flex;
+  justify-content: center;
+  transform: rotate(90deg);
+  position: relative;
+  left: 43rem;
+  top: 3rem;
+}
+
+.chng_ico {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98%;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.resume-icon {
+  pointer-events: auto;
+  width: 60px;
+  height: 60px;
+  background: rgba(59, 130, 246, 0.1);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-light);
+}
+
+.resume-icon:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+@media screen and (max-width: 1024px) {
+  .TOP__one {
+    flex-direction: column;
+    /* background: red; */
+    padding: 10px;
+  }
+
+  .TOP__one>div:first-child {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .Scroll__down {
+    display: none;
+  }
+
+  .resume-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .chng_ico {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TOP__one {
+    flex-direction: column;
+    /* background: blue; */
+    width: 100%;
+    padding: 5px;
+  }
+
+  .TOP__one>div:first-child {
+    margin-top: 70px;
+  }
+
+  .Scroll__down {
+    display: none;
+  }
+
+  .resume-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    margin-right: 5px;
+  }
+
+  .chng_ico {
+    top: 10px;
+    right: 10px;
+  }
+}

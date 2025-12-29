@@ -1,0 +1,580 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loads and displays CSpinner component 1`] = `
+<div>
+  <div>
+    <div
+      class="row my-2 mx-0"
+    >
+      <div
+        class="col-auto p-0"
+      >
+        <div
+          class="row mb-2"
+        >
+          <label
+            class="form-label col-sm-auto col-form-label"
+          >
+            Filter:
+          </label>
+          <div
+            class="col-sm-auto"
+          >
+            <input
+              class="form-control"
+              placeholder="type string..."
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-auto p-0"
+      >
+        <button
+          class="btn btn-transparent"
+          type="button"
+        >
+          <svg
+            class="icon icon-custom-size"
+            role="img"
+            viewBox="0 0 512 512"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              class="ci-primary"
+              fill="var(--ci-primary-color, currentColor)"
+              points="40 16 40 53.828 109.024 136 150.815 136 76.896 48 459.51 48 304 242.388 304 401.373 241.373 464 240 464 240 368 208 368 208 496 254.627 496 336 414.627 336 253.612 496 53.612 496 16 40 16"
+            />
+            <polygon
+              class="ci-primary"
+              fill="var(--ci-primary-color, currentColor)"
+              points="166.403 248.225 226.864 187.763 204.237 165.135 143.775 225.597 83.313 165.135 60.687 187.763 121.148 248.225 60.687 308.687 83.313 331.314 143.775 270.852 204.237 331.314 226.864 308.687 166.403 248.225"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="position-relative"
+  >
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table table-hover table-striped add-this-class"
+      >
+        <thead
+          class="table-danger"
+        >
+          <tr>
+            <th>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </th>
+            <th
+              class="table-primary fw-semibold"
+              style="cursor: pointer; width: 20%; color: blue;"
+            >
+              <div
+                class="d-inline"
+              >
+                Name
+              </div>
+              <span
+                class="opacity-25 float-end me-1"
+              >
+                <svg
+                  class="icon icon-custom-size"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    class="ci-primary"
+                    fill="var(--ci-primary-color, currentColor)"
+                    points="384 433.373 384 160 352 160 352 434.51 282.177 364.687 259.55 387.313 367.432 495.196 475.313 387.313 452.687 364.687 384 433.373"
+                  />
+                  <polygon
+                    class="ci-primary"
+                    fill="var(--ci-primary-color, currentColor)"
+                    points="159.432 17.372 51.55 125.255 74.177 147.882 144 78.059 144 352 176 352 176 79.195 244.687 147.882 267.313 125.255 159.432 17.372"
+                  />
+                </svg>
+              </span>
+            </th>
+            <th
+              style="cursor: pointer;"
+            >
+              <div
+                class="d-inline"
+              >
+                Registered
+              </div>
+              <span
+                class="opacity-25 float-end me-1"
+              >
+                <svg
+                  class="icon icon-custom-size"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    class="ci-primary"
+                    fill="var(--ci-primary-color, currentColor)"
+                    points="384 433.373 384 160 352 160 352 434.51 282.177 364.687 259.55 387.313 367.432 495.196 475.313 387.313 452.687 364.687 384 433.373"
+                  />
+                  <polygon
+                    class="ci-primary"
+                    fill="var(--ci-primary-color, currentColor)"
+                    points="159.432 17.372 51.55 125.255 74.177 147.882 144 78.059 144 352 176 352 176 79.195 244.687 147.882 267.313 125.255 159.432 17.372"
+                  />
+                </svg>
+              </span>
+            </th>
+            <th
+              style="width: 20%;"
+            >
+              <div
+                class="d-inline"
+              >
+                Role
+              </div>
+            </th>
+            <th
+              style="cursor: pointer; width: 20%;"
+            >
+              <div
+                class="d-inline"
+              >
+                Status
+              </div>
+              <span
+                class="float-end me-1"
+              >
+                <svg
+                  class="icon icon-custom-size"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    class="ci-primary"
+                    fill="var(--ci-primary-color, currentColor)"
+                    points="390.624 150.625 256 16 121.376 150.625 144.004 173.252 240.001 77.254 240.001 495.236 272.001 495.236 272.001 77.257 367.996 173.252 390.624 150.625"
+                  />
+                </svg>
+              </span>
+            </th>
+            <th
+              class="table-primary fw-semibold"
+              style="width: 1%;"
+            >
+              <div
+                class="d-inline"
+              />
+            </th>
+          </tr>
+          <tr>
+            <th />
+            <th
+              class="table-primary fw-semibold"
+            >
+              <input
+                aria-label="column name: 'Name' filter input"
+                class="form-control form-control-sm"
+                type="text"
+                value=""
+              />
+            </th>
+            <th>
+              <input
+                aria-label="column name: 'Registered' filter input"
+                class="form-control form-control-sm"
+                type="text"
+                value=""
+              />
+            </th>
+            <th />
+            <th>
+              <input
+                aria-label="column name: 'Status' filter input"
+                class="form-control form-control-sm"
+                type="text"
+                value=""
+              />
+            </th>
+            <th
+              class="table-primary fw-semibold"
+            />
+          </tr>
+        </thead>
+        <tbody
+          style="cursor: pointer;"
+        >
+          <tr
+            class="align-middle table-warning"
+            tabindex="0"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </td>
+            <td>
+              Avram Tarasios
+            </td>
+            <td>
+              2022/02/07
+            </td>
+            <td>
+              Staff
+            </td>
+            <td>
+              <span
+                class="badge bg-danger"
+              >
+                Banned
+              </span>
+            </td>
+            <td>
+              undefined
+            </td>
+          </tr>
+          <tr
+            tabindex="0"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </td>
+            <td>
+              Nehemiah Tatius
+            </td>
+            <td>
+              2022/02/07
+            </td>
+            <td>
+              Staff
+            </td>
+            <td>
+              <span
+                class="badge bg-danger"
+              >
+                Banned
+              </span>
+            </td>
+            <td>
+              undefined
+            </td>
+          </tr>
+          <tr
+            tabindex="0"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </td>
+            <td>
+              Paĉjo Jadon
+            </td>
+            <td>
+              2022/02/07
+            </td>
+            <td>
+              Staff
+            </td>
+            <td>
+              <span
+                class="badge bg-danger"
+              >
+                Banned
+              </span>
+            </td>
+            <td>
+              undefined
+            </td>
+          </tr>
+          <tr
+            tabindex="0"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </td>
+            <td>
+              Zbyněk Phoibos
+            </td>
+            <td>
+              2022/02/07
+            </td>
+            <td>
+              Staff
+            </td>
+            <td>
+              <span
+                class="badge bg-danger"
+              >
+                Banned
+              </span>
+            </td>
+            <td>
+              undefined
+            </td>
+          </tr>
+          <tr
+            tabindex="0"
+          >
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </td>
+            <td>
+              Ford Prefect
+            </td>
+            <td>
+              2001/05/25
+            </td>
+            <td>
+              Alien
+            </td>
+            <td>
+              <span
+                class="badge bg-primary"
+              >
+                Don't panic!
+              </span>
+            </td>
+            <td>
+              undefined
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+            </th>
+            <th
+              class="table-primary fw-semibold"
+              style="width: 20%; color: blue;"
+            >
+              <div
+                class="d-inline"
+              >
+                Name
+              </div>
+            </th>
+            <th>
+              <div
+                class="d-inline"
+              >
+                Registered
+              </div>
+            </th>
+            <th
+              style="width: 20%;"
+            >
+              <div
+                class="d-inline"
+              >
+                Role
+              </div>
+            </th>
+            <th
+              style="width: 20%;"
+            >
+              <div
+                class="d-inline"
+              >
+                Status
+              </div>
+            </th>
+            <th
+              class="table-primary fw-semibold"
+              style="width: 1%;"
+            >
+              <div
+                class="d-inline"
+              />
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <nav
+        aria-label="pagination"
+      >
+        <ul
+          class="pagination justify-content-start"
+        >
+          <li
+            class="page-item"
+          >
+            <a
+              aria-disabled="false"
+              aria-label="Go to first page"
+              class="page-link"
+            >
+              «
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-disabled="false"
+              aria-label="Go to previous page"
+              class="page-link"
+            >
+              ‹
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-label="Go to page 1"
+              class="page-link"
+            >
+              1
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-label="Go to page 2"
+              class="page-link"
+            >
+              2
+            </a>
+          </li>
+          <li
+            aria-current="page"
+            class="page-item active"
+          >
+            <span
+              class="page-link"
+            >
+              3
+            </span>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-label="Go to page 4"
+              class="page-link"
+            >
+              4
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-label="Go to page 5"
+              class="page-link"
+            >
+              5
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-disabled="false"
+              aria-label="Go to next page"
+              class="page-link"
+            >
+              ›
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              aria-disabled="false"
+              aria-label="Go to last page"
+              class="page-link"
+            >
+              »
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="col-auto ms-auto"
+    >
+      <div
+        class="row"
+      >
+        <label
+          class="form-label col-auto col-form-label"
+        >
+          Items per page:
+        </label>
+        <div
+          class="col-auto"
+        >
+          <select
+            class="form-select"
+          >
+            <option
+              selected=""
+              value="5"
+            >
+              5
+            </option>
+            <option
+              value="10"
+            >
+              10
+            </option>
+            <option
+              value="20"
+            >
+              20
+            </option>
+            <option
+              value="50"
+            >
+              50
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

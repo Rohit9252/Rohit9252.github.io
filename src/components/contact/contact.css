@@ -1,0 +1,130 @@
+.contact.contact_container {
+/* width: 58%; */
+margin: auto;
+display: grid;
+grid-template-columns: 30% 58%;
+justify-content: center;
+align-items: center;
+gap:12%;
+/* border:2px solid */
+}
+
+.contact_options{
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact_option{
+    background: var(--color-bg-variant);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-light);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact_option:hover{
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary-variant);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+.contact_icon{
+    color: var(--color-primary-variant);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 1;
+}
+
+.contact_option a{
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+.contact_option h4 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    opacity: 1;
+}
+
+#contact{
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 120px;
+    /* border:2px solid red */
+}
+
+/* //..............Form...................// */
+form{
+    display: flex;
+    flex-direction: column;
+    gap:1.3rem;
+  align-items: flex-start;
+}
+input, textarea{
+    width: 100%;
+    font-size: medium;
+    padding: 1.5rem;
+    font-family: "Inter", sans-serif;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    resize:none;
+    color: var(--color-white);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+
+@media screen and (max-width: 1024px){
+.contact.contact_container{
+    grid-template-columns: 1fr;
+    gap:2rem;
+}
+}
+
+@media screen and (max-width: 600px){
+.contact.contact_container{
+    grid-template-columns: 1fr;
+    width: var(--container-width-sm);
+}
+}
+
+
+.sendBtn{
+    background: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    font-size: medium;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+.sendBtn:hover{
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}

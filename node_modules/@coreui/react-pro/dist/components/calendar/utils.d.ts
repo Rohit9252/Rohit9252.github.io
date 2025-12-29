@@ -1,0 +1,22 @@
+export declare const convertToLocalDate: (d: Date, locale: string, options?: {}) => string;
+export declare const convertToLocalTime: (d: Date, locale: string, options?: {}) => string;
+export declare const createGroupsInArray: <T>(arr: T[], numberOfGroups: number) => T[][];
+export declare const getCurrentYear: () => number;
+export declare const getCurrentMonth: () => number;
+export declare const getMonthName: (month: number, locale: string) => string;
+export declare const getMonthsNames: (locale: string) => string[];
+export declare const getYears: (year: number) => number[];
+export declare const getMonthDetails: (year: number, month: number, firstDayOfWeek: number) => {
+    date: Date;
+    month: string;
+}[][];
+export declare const isDisableDateInRange: (startDate?: Date | null, endDate?: Date | null, dates?: Date[] | Date[][] | (Date | Date[])[]) => boolean;
+export declare const isDateDisabled: (date: Date, min?: Date | null, max?: Date | null, dates?: Date[] | Date[][] | (Date | Date[])[]) => boolean | undefined;
+export declare const isDateInRange: (date: Date, start: Date | null, end: Date | null) => boolean | null;
+export declare const isDateSelected: (date: Date, start: Date | null, end: Date | null) => boolean | null;
+export declare const isEndDate: (date: Date, start: Date | null, end: Date | null) => boolean | null;
+export declare const isLastDayOfMonth: (date: Date) => boolean;
+export declare const isSameDateAs: (date: Date | null, date2: Date | null) => boolean;
+export declare const isStartDate: (date: Date, start: Date | null, end: Date | null) => boolean | null;
+export declare const isToday: (date: Date) => boolean;
+export declare const isValidDate: (date: string) => number | false;

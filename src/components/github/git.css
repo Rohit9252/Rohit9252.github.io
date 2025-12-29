@@ -1,0 +1,46 @@
+.git_calendar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  /* border: 2px solid; */
+  margin-top: 20px;
+  justify-content: center;
+}
+#gitHub {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.main_stats {
+  width: 60%;
+  margin: auto;
+}
+
+.stats {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stats > div > img {
+  margin: 2px;
+  padding: 1px;
+  background: linear-gradient(135deg, red, blue 50%, transparent 50%);
+  background-size: 350%;
+  background-position: 100% 100%;
+  transition: background 1.5s;
+}
+.stats > div > img:hover {
+  background-position: 0% 0%;
+}
+
+@media screen and (max-width: 1024px) {
+  .main_stats {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main_stats {
+    width: 90%;
+    margin: auto;
+  }
+}

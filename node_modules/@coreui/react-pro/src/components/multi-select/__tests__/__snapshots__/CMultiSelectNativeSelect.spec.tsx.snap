@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CMultiSelectNativeSelect customize 1`] = `
+<div>
+  <select
+    class="multi-select-new"
+    multiple=""
+    style="display: none;"
+    tabindex="-1"
+  >
+    <option
+      value="value1"
+    >
+      text1
+    </option>
+    <option
+      disabled=""
+      value="value2"
+    >
+      text2
+    </option>
+    <option
+      value="value3"
+    >
+      text3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`loads and displays CMultiSelectNativeSelect component 1`] = `
+<div>
+  <select
+    class="multi-select-new"
+    style="display: none;"
+    tabindex="-1"
+  />
+</div>
+`;

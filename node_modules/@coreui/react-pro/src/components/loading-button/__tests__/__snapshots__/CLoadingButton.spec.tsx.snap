@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CLoadingButton customize 1`] = `
+<div>
+  <button
+    class="btn btn-primary btn-loading is-loading bazinga disabled"
+    disabled=""
+    type="button"
+  >
+    <div
+      class="spinner-grow text-undefined spinner-grow-sm btn-loading-spinner"
+      role="status"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Loading...
+      </span>
+    </div>
+    Text
+  </button>
+</div>
+`;
+
+exports[`loads and displays CLoadingButton component 1`] = `
+<div>
+  <button
+    class="btn btn-primary btn-loading"
+    type="button"
+  >
+    <div
+      class="spinner-border text-undefined spinner-border-sm btn-loading-spinner"
+      role="status"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Loading...
+      </span>
+    </div>
+  </button>
+</div>
+`;

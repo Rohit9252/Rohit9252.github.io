@@ -1,0 +1,27 @@
+import type { Column, ColumnFilter, ColumnFilterValue, Group, Item, Sorter, SorterValue, TableFilter } from './types';
+export declare const filterColumns: (items: Item[], columnFilter: boolean | ColumnFilter | undefined, columnFilterState: ColumnFilterValue, itemsDataColumns: string[]) => Item[];
+export declare const filterTable: (items: Item[], tableFilter: boolean | TableFilter | undefined, tableFilterState: string, itemsDataColumns: string[]) => Item[];
+export declare const getClickedColumnName: (target: HTMLTextAreaElement, columnNames: string[]) => string;
+export declare const getColumnKey: (column: Column | string) => string;
+export declare const getColumnLabel: (column: Column | string) => string;
+export declare const getColumnNames: (columns: (string | Column)[] | undefined, items: Item[]) => string[];
+export declare const getColumns: (_columns: (Column | Group | string)[]) => (Column | string)[];
+export declare const countColumns: (columns: Column[], counter?: number) => number;
+export declare const getColumnGroups: (columns: (string | Column)[] | undefined) => {
+    children?: Column[] | Group[] | undefined;
+    colspan?: number | undefined;
+    group?: string | undefined;
+    key: string;
+    label?: string | undefined;
+    _style?: any;
+    _props?: import("../table/CTableHeaderCell").CTableHeaderCellProps | undefined;
+}[][];
+export declare const getColumnNamesFromItems: (items: Item[]) => string[];
+export declare const getColumnSorterState: (key: string, sorterState: SorterValue | undefined) => string | number;
+export declare const getColumnValues: (items: Item[], key: string) => any[];
+export declare const getTableDataCellProps: (item: Item, colName: string) => any;
+export declare const getTableHeaderCellProps: (column: Column | string) => import("../table/CTableHeaderCell").CTableHeaderCellProps;
+export declare const getTableHeaderCellStyles: (column: Column | string, columnSorter: boolean | Sorter | undefined) => any;
+export declare const isSortable: (i: number, columns: (string | Column)[] | undefined, columnSorter: Sorter | boolean | undefined, itemsDataColumns: string[], columnNames: string[]) => boolean | undefined;
+export declare const pretifyName: (name: string) => string;
+export declare const sortItems: (columnSorter: boolean | Sorter | undefined, items: Item[], itemsDataColumns: string[], sorterState: SorterValue) => Item[];
