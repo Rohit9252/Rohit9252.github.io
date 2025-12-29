@@ -1,4 +1,4 @@
-name: Deploy Portfolio App to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
@@ -140,3 +140,62 @@ jobs:
           echo "- **URL**: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+
+  release:
+    name: Create Release Tag
+    runs-on: ubuntu-latest
+    needs: deploy
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Generate version
+        id: version
+        run: |
+          VERSION="v$(date +'%Y.%m.%d')-${{ github.run_number }}"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Generated version: $VERSION"
+      
+      - name: Create Git Tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a ${{ steps.version.outputs.VERSION }} -m "Release ${{ steps.version.outputs.VERSION }}"
+          git push origin ${{ steps.version.outputs.VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Get commit messages
+        id: commits
+        run: |
+          COMMITS=$(git log --pretty=format:"- %s (%h)" -10)
+          echo "COMMITS<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.VERSION }}
+          release_name: Release ${{ steps.version.outputs.VERSION }}
+          body: |
+            ## 🚀 Deployment Information
+            
+            **Version:** ${{ steps.version.outputs.VERSION }}
+            **Deployed at:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            **Commit:** ${{ github.sha }}
+            **Branch:** ${{ github.ref_name }}
+            
+            ## 📝 Recent Changes
+            ${{ steps.commits.outputs.COMMITS }}
+            
+            ## 🔗 Links
+            - [Live Application](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+            - [View Commit](${{ github.event.repository.html_url }}/commit/${{ github.sha }})
+          draft: false
+          prerelease: false
