@@ -27,7 +27,7 @@ import {
   SiAwslambda
 } from "react-icons/si";
 
-const Experience = () => {
+const Skills = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -184,4 +184,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Skills;

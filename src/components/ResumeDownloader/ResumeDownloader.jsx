@@ -2,10 +2,10 @@ import React from 'react'
 import Header from '../Header/Header'
 import MainImage from '../Header/Image'
 import { FaDownload } from 'react-icons/fa'
-import "./FirstC.css"
+import "./resumeDownloader.css"
 import cv from "../../assets/Rohit_Kumar.pdf"
 
-const FirstC = () => {
+const ResumeDownloader = () => {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
     link.href = cv;
@@ -37,4 +37,4 @@ const FirstC = () => {
   );
 }
 
-export default FirstC
+export default ResumeDownloader;

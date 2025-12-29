@@ -13,11 +13,8 @@ const About = () => {
 
   const stats = [
     { icon: MdWorkOutline, title: "Experience", value: "3+", unit: "Years", color: "#3b82f6" },
-    { icon: GoProject, title: "Projects", value: "15+", unit: "Completed", color: "#10b981" },
     { icon: SiLeetcode, title: "Zoho Implementations", value: "30+", unit: "Delivered", color: "#e11d48" },
     { icon: SiLeetcode, title: "DSA Problems", value: "600+", unit: "Solved", color: "#f59e0b" },
-    { icon: FaCode, title: "Coding Hours", value: "1200+", unit: "Hours", color: "#ef4444" },
-    { icon: FaUsers, title: "Team Projects", value: "8+", unit: "Collaborative", color: "#8b5cf6" }
   ];
 
   const highlights = [
@@ -53,7 +50,7 @@ const About = () => {
         <span className='section-subtitle'>Get To Know</span>
         <h1 className='section-title'>About Me</h1>
         <p className='section-intro'>
-          Passionate Full-Stack Developer with 3+ years of experience in building scalable web applications
+          Passionate Backend Software Engineer with 3+ years of experience in building scalable web applications
         </p>
       </div>
 

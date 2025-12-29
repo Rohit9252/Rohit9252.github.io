@@ -20,15 +20,15 @@ const NAv = () => {
         <a href="#about" className={active == "#about" ? "active" : ""} onClick={() => setActive("#about")}>
           <FcAbout />
         </a>
-        <a href="#education" className={active == "#education" ? "active" : ""} onClick={() => setActive("#education")}>
-          <FaGraduationCap />
-        </a>
-        <a href="#skills" className={active == "#skills" ? "active" : ""} onClick={() => setActive("#skills")}>
-          <GiSkills />
-        </a>
         <a href="#work-experience" className={active == "#work-experience" ? "active" : ""} onClick={() => setActive("#work-experience")}>
           <FaBriefcase />
         </a>
+         <a href="#skills" className={active == "#skills" ? "active" : ""} onClick={() => setActive("#skills")}>
+          <GiSkills />
+        </a>
+        <a href="#education" className={active == "#education" ? "active" : ""} onClick={() => setActive("#education")}>
+          <FaGraduationCap />
+        </a>  
         <a href="#projects" className={active == "#projects" ? "active" : ""} onClick={() => setActive("#projects")}>
           <RiServiceLine />
         </a>

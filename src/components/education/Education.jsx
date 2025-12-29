@@ -151,7 +151,7 @@ const Education = () => {
                     );
                 })}
             </div>
-
+{/* 
             <div className="education-stats">
                 <div className="stat-item">
                     <div className="stat-icon">
@@ -182,7 +182,7 @@ const Education = () => {
                         <span className="stat-label">Completion Rate</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }
