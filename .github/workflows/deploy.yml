@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Deploy Portfolio App to GitHub Pages
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # Allows manual trigger from Actions tab
 
 permissions:
-  contents: read
+  contents: write  # Changed from 'read' to 'write' for creating tags and releases
   pages: write
   id-token: write
 
@@ -151,6 +151,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Generate version
         id: version
