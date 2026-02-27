@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const experiences = [
   {
     company: 'Noduco Software Private Limited',
-    role: 'Software Developer (Backend)',
+    role: 'Software Engineer (Backend)',
     period: 'July 2024 - Present',
     location: 'Remote',
     type: 'Full-time',
