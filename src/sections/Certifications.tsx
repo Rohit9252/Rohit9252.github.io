@@ -15,7 +15,7 @@ const certifications = [
     color: '#E11D48',
     link: 'https://www.credly.com/earner/earned/badge/472d9477-f9e5-43e0-a881-bd73ac4e02f6',
     description: 'Certified professional capable of leading Agile teams, managing backlogs, and delivering value in a SAFe enterprise.',
-    skills: ['Product Ownership', 'Backlog Refinement', 'Value Definition', 'Business Case Development']
+    skills: ['Agile Methodologies', 'Product Management', 'Backlog Management', 'Lean Agile', 'Business Ownership', 'PI Planning', 'Stakeholder Management', 'Value Stream Mapping', 'Roadmap Planning']
   },
   {
     title: 'SAFe® 6 Scrum Master',
@@ -23,9 +23,9 @@ const certifications = [
     date: 'Issued February 2026',
     icon: Users,
     color: '#0EA5E9',
-    link: 'https://www.credly.com/earner/earned/badge/472d9477-f9e5-43e0-a881-bd73ac4e02f6',
+    link: 'https://www.credly.com/earner/earned/badge/92697e6a-5110-4cca-a5c1-28793a715c9f',
     description: 'Expertise in facilitating Scrum events, coaching teams on Agile principles, and removing impediments to delivery.',
-    skills: ['Agile Methodologies', 'SAFe® Principles', 'Lean-Agile', 'Scaled Agile Framework®']
+    skills: ['Agile Leadership', 'Agile Management', 'AI Prompting', 'Artificial General Intelligence', 'Business Coaching', 'Coach Agile Teams', 'Computer Programming', 'Kanban Principles', 'Leading Teams', 'Program Management', 'Scaled Agile Framework (SAFe)', 'Sprint Planning', 'Team Management', 'Servant Leadership', 'Facilitation', 'SDLC', 'Continuous Improvement']
   }
 ];
 

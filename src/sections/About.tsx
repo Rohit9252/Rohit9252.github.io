@@ -9,9 +9,9 @@ const stats = [
   { icon: Briefcase, value: '3+', label: 'Years Experience' },
   { icon: Code, value: '15+', label: 'Java Projects' },
   { icon: Layers, value: '30+', label: 'Zoho Implementations' },
-  { icon: Database, value: '100K+', label: 'Records Processed' },
-  { icon: Award, value: '600+', label: 'DSA Problems Solved' },
-  { icon: Zap, value: '10+', label: 'Enterprise Clients' },
+  // { icon: Database, value: '100K+', label: 'Records Processed' },
+  // { icon: Award, value: '600+', label: 'DSA Problems Solved' },
+  // { icon: Zap, value: '10+', label: 'Enterprise Clients' },
 ];
 
 const highlights = [

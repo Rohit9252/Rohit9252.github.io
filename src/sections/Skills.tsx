@@ -73,7 +73,9 @@ const techCategories = [
       { name: "Value Definition", icon: <FaGem />, level: 85, color: "#00a3e0" },
       { name: "Business Case Development", icon: <FaChartLine />, level: 82, color: "#00a3e0" },
       { name: "Product Management", icon: <FaLightbulb />, level: 85, color: "#00a3e0" },
-      { name: "SAFe® Principles", icon: <FaUsers />, level: 90, color: "#00a3e0" }
+      { name: "SAFe® Principles", icon: <FaUsers />, level: 90, color: "#00a3e0" },
+      { name: "PI Planning", icon: <FaProjectDiagram />, level: 95, color: "#00a3e0" },
+      { name: "Servant Leadership", icon: <FaUsersCog />, level: 92, color: "#00a3e0" }
     ]
   },
   {
