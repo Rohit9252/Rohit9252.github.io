@@ -16,7 +16,15 @@ import {
   FaChartLine,
   FaLightbulb,
   FaTasks,
-  FaGem
+  FaGem,
+  FaPython,
+  FaRobot,
+  FaBrain,
+  FaNetworkWired,
+  FaDatabase,
+  FaMicrochip,
+  FaMemory,
+  FaLink
 } from "react-icons/fa";
 import { 
   DiJavascript1, 
@@ -35,10 +43,27 @@ import {
   SiAwslambda,
   SiLeanpub
 } from "react-icons/si";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const techCategories = [
+  {
+    title: "Agentic & Gen AI",
+    color: "#8B5CF6",
+    technologies: [
+      { name: "AI Agents", icon: <FaRobot />, level: 90, color: "#8B5CF6" },
+      { name: "LangChain", icon: <FaLink />, level: 85, color: "#1C3C3C" },
+      { name: "LangGraph", icon: <FaNetworkWired />, level: 80, color: "#000000" },
+      { name: "RAG", icon: <FaDatabase />, level: 88, color: "#3B82F6" },
+      { name: "LLM Integration", icon: <FaBrain />, level: 92, color: "#10B981" },
+      { name: "MCP", icon: <FaMicrochip />, level: 75, color: "#F59E0B" },
+      { name: "Checkpointing", icon: <FaTasks />, level: 82, color: "#EF4444" },
+      { name: "Systemic Memory", icon: <FaMemory />, level: 78, color: "#6366F1" },
+      { name: "Python", icon: <FaPython />, level: 85, color: "#3776AB" }
+    ]
+  },
   {
     title: "Frontend",
     color: "#e74c3c",
@@ -116,6 +141,10 @@ export default function Skills() {
   const tabsRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState(0);
+
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  ]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -204,39 +233,41 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div 
-          ref={tabsRef}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12"
-        >
-          {techCategories.map((category, index) => (
-            <button
-              key={category.title}
-              onClick={() => setActiveCategory(index)}
-              className={`group relative flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-500 ${
-                activeCategory === index
-                  ? 'text-white shadow-lg'
-                  : 'glass text-muted-foreground hover:text-foreground'
-              }`}
-              style={{ 
-                backgroundColor: activeCategory === index ? category.color : undefined,
-                borderColor: activeCategory === index ? category.color : undefined
-              }}
-            >
-              <span className="relative z-10">{category.title}</span>
-              <span className={`flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold transition-colors ${
-                activeCategory === index ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
-              }`}>
-                {category.technologies.length}
-              </span>
-              {activeCategory === index && (
-                <div 
-                  className="absolute inset-0 rounded-full blur-md opacity-50 -z-10"
-                  style={{ backgroundColor: category.color }}
-                />
-              )}
-            </button>
-          ))}
+        {/* Category Tabs - Horizontally scrollable on mobile */}
+        <div className="relative mb-12 overflow-x-auto pb-4 scrollbar-hide">
+          <div 
+            ref={tabsRef}
+            className="flex flex-nowrap md:flex-wrap md:justify-center gap-3 sm:gap-4 min-w-max px-4"
+          >
+            {techCategories.map((category, index) => (
+              <button
+                key={category.title}
+                onClick={() => setActiveCategory(index)}
+                className={`group relative flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-500 whitespace-nowrap ${
+                  activeCategory === index
+                    ? 'text-white shadow-lg'
+                    : 'glass text-muted-foreground hover:text-foreground'
+                }`}
+                style={{ 
+                  backgroundColor: activeCategory === index ? category.color : undefined,
+                  borderColor: activeCategory === index ? category.color : undefined
+                }}
+              >
+                <span className="relative z-10">{category.title}</span>
+                <span className={`flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold transition-colors ${
+                  activeCategory === index ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                }`}>
+                  {category.technologies.length}
+                </span>
+                {activeCategory === index && (
+                  <div 
+                    className="absolute inset-0 rounded-full blur-md opacity-50 -z-10"
+                    style={{ backgroundColor: category.color }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Skills Display */}
@@ -254,75 +285,22 @@ export default function Skills() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techCategories[activeCategory].technologies.map((tech) => (
-              <div
-                key={tech.name}
-                className="group relative glass p-6 rounded-2xl border hover:border-transparent transition-all duration-500 hover:-translate-y-2 overflow-hidden"
-              >
-                {/* Hover Border Effect */}
-                <div 
-                  className="absolute inset-x-0 top-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                  style={{ backgroundColor: tech.color }}
-                />
-
-                {/* Skill Icon */}
-                <div className="relative mb-6 flex justify-center">
-                  <div 
-                    className="text-5xl sm:text-6xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 z-10"
-                    style={{ color: tech.color }}
-                  >
-                    {tech.icon}
+          {/* Carousel for Mobile, Grid for Desktop */}
+          <div className="block md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {techCategories[activeCategory].technologies.map((tech) => (
+                  <div key={tech.name} className="flex-[0_0_100%] min-w-0 px-4">
+                    <SkillCard tech={tech} />
                   </div>
-                  <div 
-                    className="absolute inset-0 blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full"
-                    style={{ backgroundColor: tech.color }}
-                  />
-                </div>
-
-                {/* Skill Info */}
-                <div className="text-center">
-                  <h4 className="text-lg font-bold mb-4">{tech.name}</h4>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="flex-1 h-2 rounded-full bg-secondary/50 overflow-hidden relative">
-                      <div
-                        className="h-full rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                        style={{ 
-                          width: `${tech.level}%`,
-                          backgroundColor: tech.color 
-                        }}
-                      >
-                        {/* Shimmer Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                      </div>
-                    </div>
-                    <span 
-                      className="text-sm font-bold min-w-[35px]"
-                      style={{ color: tech.color }}
-                    >
-                      {tech.level}%
-                    </span>
-                  </div>
-                </div>
-
-                {/* Decorative Particles (simplified) */}
-                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  {[...Array(3)].map((_, i) => (
-                    <div 
-                      key={i}
-                      className="absolute w-1 h-1 rounded-full animate-float"
-                      style={{ 
-                        backgroundColor: tech.color,
-                        top: `${20 + i * 30}%`,
-                        left: `${15 + i * 40}%`,
-                        animationDelay: `${i * 0.5}s`,
-                        animationDuration: `${2 + i}s`
-                      }}
-                    />
-                  ))}
-                </div>
+                ))}
               </div>
+            </div>
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techCategories[activeCategory].technologies.map((tech) => (
+              <SkillCard key={tech.name} tech={tech} />
             ))}
           </div>
         </div>
@@ -334,7 +312,86 @@ export default function Skills() {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
     </section>
   );
 }
+
+function SkillCard({ tech }: { tech: typeof techCategories[0]['technologies'][0] }) {
+  return (
+    <div
+      className="skill-card group relative glass p-6 sm:p-8 rounded-2xl border hover:border-transparent transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full flex flex-col items-center justify-center text-center"
+    >
+      {/* Hover Border Effect */}
+      <div 
+        className="absolute inset-x-0 top-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+        style={{ backgroundColor: tech.color }}
+      />
+
+      {/* Skill Icon */}
+      <div className="relative mb-6">
+        <div 
+          className="text-6xl sm:text-7xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 z-10"
+          style={{ color: tech.color }}
+        >
+          {tech.icon}
+        </div>
+        <div 
+          className="absolute inset-0 blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full"
+          style={{ backgroundColor: tech.color }}
+        />
+      </div>
+
+      {/* Skill Info */}
+      <div className="w-full">
+        <h4 className="text-xl font-bold mb-4">{tech.name}</h4>
+        
+        <div className="flex items-center gap-4 max-w-[250px] mx-auto">
+          <div className="flex-1 h-2 rounded-full bg-secondary/50 overflow-hidden relative">
+            <div
+              className="h-full rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
+              style={{ 
+                width: `${tech.level}%`,
+                backgroundColor: tech.color 
+              }}
+            >
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+            </div>
+          </div>
+          <span 
+            className="text-sm font-bold min-w-[35px]"
+            style={{ color: tech.color }}
+          >
+            {tech.level}%
+          </span>
+        </div>
+      </div>
+
+      {/* Decorative Particles */}
+      <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(3)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute w-1 h-1 rounded-full animate-float"
+            style={{ 
+              backgroundColor: tech.color,
+              top: `${20 + i * 30}%`,
+              left: `${15 + i * 40}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${2 + i}s`
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+

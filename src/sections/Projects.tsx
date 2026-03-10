@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github, Database, GraduationCap, ShoppingBag, Sprout, Youtube, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,6 +127,9 @@ export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' }, [
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  ]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -145,9 +150,9 @@ export default function Projects() {
         }
       );
 
-      // Project cards animation
+      // Project cards animation for desktop
       const cards = gridRef.current?.querySelectorAll('.project-card');
-      if (cards) {
+      if (cards && cards.length > 0) {
         gsap.fromTo(
           cards,
           { y: 60, opacity: 0, scale: 0.95 },
@@ -197,96 +202,116 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="project-card group glass rounded-2xl overflow-hidden hover:bg-[#5B8DF7]/5 transition-all duration-500 flex flex-col"
-            >
-              {/* Card Header with Gradient */}
-              <div className={`h-1.5 bg-gradient-to-r ${project.color}`} />
-              
-              <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                {/* Icon & Title */}
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white`}>
-                      <project.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold group-hover:text-[#5B8DF7] transition-colors line-clamp-1">
-                        {project.title}
-                      </h3>
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        project.type === 'Professional' 
-                          ? 'bg-[#5B8DF7]/20 text-[#5B8DF7]' 
-                          : project.type === 'Solo Project'
-                          ? 'bg-green-500/20 text-green-500'
-                          : 'bg-purple-500/20 text-purple-500'
-                      }`}>
-                        {project.type}
-                      </span>
-                    </div>
+        {/* Carousel for Mobile, Grid for Desktop */}
+        <div className="max-w-7xl mx-auto">
+          {/* Mobile Carousel View */}
+          <div className="block md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {projects.map((project) => (
+                  <div key={project.title} className="flex-[0_0_100%] min-w-0 px-4">
+                    <ProjectCard project={project} />
                   </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
-                  {project.description}
-                </p>
-
-                {/* Highlights */}
-                <ul className="space-y-1 mb-4">
-                  {project.highlights.slice(0, 3).map((highlight, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs">
-                      <span className="w-1 h-1 rounded-full bg-[#5B8DF7] mt-1.5 flex-shrink-0" />
-                      <span className="text-muted-foreground line-clamp-1">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tags.slice(0, 4).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded-full bg-secondary text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="flex gap-2 mt-auto">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="rounded-lg flex-1 text-xs h-9"
-                    asChild
-                  >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-3.5 w-3.5 mr-1.5" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button
-                    size="sm"
-                    className={`rounded-lg flex-1 text-xs h-9 bg-gradient-to-r ${project.color} text-white border-0`}
-                    asChild
-                  >
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                      Live Demo
-                    </a>
-                  </Button>
-                </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Desktop Grid View */}
+          <div ref={gridRef} className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+function ProjectCard({ project }: { project: typeof projects[0] }) {
+  return (
+    <div className="project-card group glass rounded-2xl overflow-hidden hover:bg-[#5B8DF7]/5 transition-all duration-500 flex flex-col h-full">
+      {/* Card Header with Gradient */}
+      <div className={`h-1.5 bg-gradient-to-r ${project.color}`} />
+      
+      <div className="p-5 sm:p-6 flex flex-col flex-grow">
+        {/* Icon & Title */}
+        <div className="flex items-start justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white`}>
+              <project.icon className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold group-hover:text-[#5B8DF7] transition-colors line-clamp-1">
+                {project.title}
+              </h3>
+              <span className={`text-xs px-2 py-0.5 rounded-full ${
+                project.type === 'Professional' 
+                  ? 'bg-[#5B8DF7]/20 text-[#5B8DF7]' 
+                  : project.type === 'Solo Project'
+                  ? 'bg-green-500/20 text-green-500'
+                  : 'bg-purple-500/20 text-purple-500'
+              }`}>
+                {project.type}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
+          {project.description}
+        </p>
+
+        {/* Highlights */}
+        <ul className="space-y-1 mb-4">
+          {project.highlights.slice(0, 3).map((highlight, i) => (
+            <li key={i} className="flex items-start gap-2 text-xs">
+              <span className="w-1 h-1 rounded-full bg-[#5B8DF7] mt-1.5 flex-shrink-0" />
+              <span className="text-muted-foreground line-clamp-1">{highlight}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-0.5 rounded-full bg-secondary text-xs font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Actions */}
+        <div className="flex gap-2 mt-auto">
+          <Button
+            variant="outline"
+            size="sm"
+            className="rounded-lg flex-1 text-xs h-9"
+            asChild
+          >
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github className="h-3.5 w-3.5 mr-1.5" />
+              Code
+            </a>
+          </Button>
+          <Button
+            size="sm"
+            className={`rounded-lg flex-1 text-xs h-9 bg-gradient-to-r ${project.color} text-white border-0`}
+            asChild
+          >
+            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
+              Live Demo
+            </a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+

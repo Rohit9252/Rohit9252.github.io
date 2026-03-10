@@ -89,17 +89,23 @@ export default function Experience() {
       const items = timelineRef.current?.querySelectorAll('.timeline-item');
       if (items) {
         items.forEach((item, index) => {
+          const isMobile = window.innerWidth < 768;
           gsap.fromTo(
             item,
-            { x: index % 2 === 0 ? -50 : 50, opacity: 0 },
+            { 
+              x: isMobile ? 0 : (index % 2 === 0 ? -50 : 50), 
+              y: isMobile ? 30 : 0,
+              opacity: 0 
+            },
             {
               x: 0,
+              y: 0,
               opacity: 1,
               duration: 0.8,
               ease: 'expo.out',
               scrollTrigger: {
                 trigger: item,
-                start: 'top 75%',
+                start: 'top 85%',
                 toggleActions: 'play none none reverse',
               },
             }

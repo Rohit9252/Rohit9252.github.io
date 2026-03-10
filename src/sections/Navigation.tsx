@@ -206,13 +206,13 @@ export default function Navigation() {
         
         {/* Menu Content */}
         <div
-          className={`absolute top-20 left-4 right-4 glass rounded-2xl p-6 transition-all duration-300 ${
+          className={`absolute top-24 left-4 right-4 glass rounded-3xl p-8 transition-all duration-500 custom-expo shadow-2xl border border-white/10 ${
             isMobileMenuOpen 
-              ? 'translate-y-0 opacity-100' 
-              : '-translate-y-4 opacity-0'
+              ? 'translate-y-0 opacity-100 scale-100' 
+              : '-translate-y-10 opacity-0 scale-95'
           }`}
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             {navLinks.map((link, index) => (
               <a
                 key={link.name}
@@ -221,33 +221,36 @@ export default function Navigation() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-xl transition-colors"
+                className="px-6 py-4 text-xl font-semibold text-muted-foreground hover:text-[#5B8DF7] hover:bg-[#5B8DF7]/5 rounded-2xl transition-all duration-300 flex items-center justify-between group"
                 style={{ 
-                  transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms' 
+                  transitionDelay: isMobileMenuOpen ? `${index * 40}ms` : '0ms' 
                 }}
               >
-                {link.name}
+                <span>{link.name}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B8DF7] scale-0 group-hover:scale-100 transition-transform" />
               </a>
             ))}
-            <a
-              href="/Rohit_Kumar.pdf"
-              download="Rohit_Kumar.pdf"
-              className="mt-2"
-            >
-              <Button
-                variant="outline"
-                className="w-full rounded-xl border-[#5B8DF7] text-[#5B8DF7] hover:bg-[#5B8DF7] hover:text-white transition-all gap-2"
+            <div className="mt-4 pt-4 border-t border-border/50 flex flex-col gap-3">
+              <a
+                href="/Rohit_Kumar.pdf"
+                download="Rohit_Kumar.pdf"
+                className="w-full"
               >
-                <Download className="h-5 w-5" />
-                Download Resume
+                <Button
+                  variant="outline"
+                  className="w-full h-14 rounded-2xl border-[#5B8DF7]/30 text-[#5B8DF7] hover:bg-[#5B8DF7] hover:text-white transition-all gap-3 text-lg font-medium"
+                >
+                  <Download className="h-5 w-5" />
+                  Download Resume
+                </Button>
+              </a>
+              <Button
+                className="w-full h-14 rounded-2xl bg-[#5B8DF7] hover:bg-[#4a7de6] text-white text-lg font-bold shadow-lg shadow-[#5B8DF7]/20"
+                onClick={() => scrollToSection('#contact')}
+              >
+                Let's Talk
               </Button>
-            </a>
-            <Button
-              className="mt-2 rounded-full bg-[#5B8DF7] hover:bg-[#4a7de6] text-white w-full"
-              onClick={() => scrollToSection('#contact')}
-            >
-              Let's Talk
-            </Button>
+            </div>
           </div>
         </div>
       </div>

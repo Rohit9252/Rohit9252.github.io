@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, ExternalLink, ShieldCheck, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,27 +33,13 @@ const certifications = [
 
 export default function Certifications() {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' }, [
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  ]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (cardsRef.current) {
-        gsap.fromTo(
-          cardsRef.current.children,
-          { y: 50, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: 'top 85%',
-            },
-          }
-        );
-      }
+      // Animation logic if needed
     }, sectionRef);
 
     return () => ctx.revert();
@@ -76,78 +64,96 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div 
-          ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-        >
-          {certifications.map((cert) => (
-            <div
-              key={cert.title}
-              className="group relative glass p-8 rounded-3xl border hover:border-transparent transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col justify-between"
-            >
-              {/* Background Accent */}
-              <div 
-                className="absolute top-0 right-0 w-32 h-32 blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-full"
-                style={{ backgroundColor: cert.color }}
-              />
-
-              <div>
-                <div 
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg"
-                  style={{ backgroundColor: `${cert.color}20`, color: cert.color }}
-                >
-                  <cert.icon size={28} />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                  {cert.title}
-                </h3>
-                <p className="text-sm font-semibold text-muted-foreground mb-4 flex items-center gap-2">
-                  <Award size={14} className="text-primary" />
-                  {cert.issuer} • {cert.date}
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {cert.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {cert.skills.map((skill) => (
-                    <span 
-                      key={skill}
-                      className="text-[10px] font-bold px-2 py-1 rounded-md bg-primary/5 border border-primary/10 text-muted-foreground transition-colors group-hover:text-primary group-hover:border-primary/20"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between pt-6 border-t border-border/50">
-                <a 
-                  href={cert.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <Button 
-                    variant="outline" 
-                    className="rounded-full gap-2 border-primary/20 hover:bg-primary hover:text-white transition-all duration-300"
-                  >
-                    Verify Badge
-                    <ExternalLink size={14} />
-                  </Button>
-                </a>
-                <div 
-                  className="text-xs font-black tracking-widest uppercase opacity-20 group-hover:opacity-40 transition-opacity"
-                  style={{ color: cert.color }}
-                >
-                  SAFe® 6
-                </div>
+        {/* Carousel for Mobile, Grid for Desktop */}
+        <div className="max-w-5xl mx-auto">
+          {/* Mobile Carousel View */}
+          <div className="block md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {certifications.map((cert) => (
+                  <div key={cert.title} className="flex-[0_0_100%] min-w-0 px-4">
+                    <CertificationCard cert={cert} />
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Desktop Grid View */}
+          <div className="hidden md:grid grid-cols-2 gap-8">
+            {certifications.map((cert) => (
+              <CertificationCard key={cert.title} cert={cert} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+function CertificationCard({ cert }: { cert: typeof certifications[0] }) {
+  return (
+    <div className="group relative glass p-8 rounded-3xl border hover:border-transparent transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col justify-between h-full">
+      {/* Background Accent */}
+      <div 
+        className="absolute top-0 right-0 w-32 h-32 blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-full"
+        style={{ backgroundColor: cert.color }}
+      />
+
+      <div>
+        <div 
+          className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg"
+          style={{ backgroundColor: `${cert.color}20`, color: cert.color }}
+        >
+          <cert.icon size={28} />
+        </div>
+        
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+          {cert.title}
+        </h3>
+        <p className="text-sm font-semibold text-muted-foreground mb-4 flex items-center gap-2">
+          <Award size={14} className="text-primary" />
+          {cert.issuer} • {cert.date}
+        </p>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          {cert.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          {cert.skills.map((skill) => (
+            <span 
+              key={skill}
+              className="text-[10px] font-bold px-2 py-1 rounded-md bg-primary/5 border border-primary/10 text-muted-foreground transition-colors group-hover:text-primary group-hover:border-primary/20"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between pt-6 border-t border-border/50">
+        <a 
+          href={cert.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block"
+        >
+          <Button 
+            variant="outline" 
+            className="rounded-full gap-2 border-primary/20 hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            Verify Badge
+            <ExternalLink size={14} />
+          </Button>
+        </a>
+        <div 
+          className="text-xs font-black tracking-widest uppercase opacity-20 group-hover:opacity-40 transition-opacity"
+          style={{ color: cert.color }}
+        >
+          SAFe® 6
+        </div>
+      </div>
+    </div>
+  );
+}
+
