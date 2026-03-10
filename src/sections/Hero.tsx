@@ -147,46 +147,46 @@ export default function Hero() {
         />
       )}
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 sm:pt-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <div
             ref={contentRef}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 shadow-sm border border-white/10">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <span className="text-sm font-medium">Available for opportunities</span>
             </div>
 
-            <p className="text-lg sm:text-xl text-muted-foreground mb-4">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-4">
               Hello, I'm <span className="text-[#5B8DF7] font-semibold">Rohit Kumar</span>
             </p>
 
             <h1
               ref={titleRef}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.2] sm:leading-[1.1]"
             >
-              <span className="block mb-2">
-                {splitText('Software')}
+              <span className="block">
+                {splitText('Software Engineer')}
               </span>
-              <span className="block text-[#5B8DF7]">
-                {splitText('Engineer')}
+              <span className="block text-[#5B8DF7] text-[0.75em] xs:text-[0.85em] sm:text-[1em] mt-2">
+                {splitText('& Technical Product Manager')}
               </span>
             </h1>
 
             <p
               ref={subtitleRef}
-              className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8"
+              className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 px-2 sm:px-0"
             >
               Java Spring Boot Developer & Certified SAFe® 6 Professional. 
               Specializing in scalable backend systems and Agile leadership with 3+ years of enterprise experience.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-col xs:flex-row gap-4 justify-center lg:justify-start mb-10">
               <Button
                 size="lg"
-                className="rounded-full bg-[#5B8DF7] hover:bg-[#4a7de6] text-white px-8 glow-blue"
+                className="rounded-full bg-[#5B8DF7] hover:bg-[#4a7de6] text-white px-8 h-12 xs:h-14 text-base glow-blue"
                 onClick={() => scrollToSection('#projects')}
               >
                 View My Work
@@ -195,7 +195,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-2 px-8 bg-background/50 backdrop-blur-sm"
+                className="rounded-full border-2 px-8 h-12 xs:h-14 text-base bg-background/50 backdrop-blur-sm"
                 onClick={() => scrollToSection('#contact')}
               >
                 Get In Touch

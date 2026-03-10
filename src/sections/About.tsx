@@ -15,7 +15,9 @@ const stats = [
 ];
 
 const highlights = [
+  'Agentic AI & Generative AI',
   'Java & Spring Boot Expert',
+  'Python Development',
   'SAFe® 6 Certified',
   'Lean-Agile Mindset',
   'Product Ownership',
@@ -132,6 +134,11 @@ export default function About() {
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
+              I have deep expertise in <span className="text-foreground font-medium">Agentic AI and Generative AI</span>, leveraging Python and advanced frameworks to build intelligent, autonomous systems. 
+              My technical range extends from high-performance Java backends to state-of-the-art AI agent architectures.
+            </p>
+            
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Beyond technical implementation, I am a <span className="text-foreground font-medium">SAFe® 6 Product Owner/Product Manager (POPM)</span> and <span className="text-foreground font-medium">SAFe® 6 Scrum Master (SSM)</span>. 
               This unique blend of technical expertise and Agile leadership allows me to bridge the gap between business strategy and execution, ensuring high-value delivery through optimized Lean-Agile processes.
             </p>
@@ -147,7 +154,7 @@ export default function About() {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
                 What I Bring
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-3">
                 {[
                   'Full-Stack Development Expertise',
                   'Java Backend Specialization',
