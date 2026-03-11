@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const experiences = [
   {
     company: 'Noduco Software Private Limited',
-    role: 'Software Developer (Backend)',
+    role: 'Software Engineer (Backend)',
     period: 'July 2024 - Present',
     location: 'Remote',
     type: 'Full-time',
@@ -89,21 +89,44 @@ export default function Experience() {
       const items = timelineRef.current?.querySelectorAll('.timeline-item');
       if (items) {
         items.forEach((item, index) => {
-          gsap.fromTo(
-            item,
-            { x: index % 2 === 0 ? -50 : 50, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 0.8,
-              ease: 'expo.out',
-              scrollTrigger: {
-                trigger: item,
-                start: 'top 75%',
-                toggleActions: 'play none none reverse',
-              },
-            }
-          );
+          const card = item.querySelector('.timeline-card');
+          const period = item.querySelector('.timeline-period');
+
+          if (card) {
+            gsap.fromTo(
+              card,
+              { x: index % 2 === 0 ? -100 : 100, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'expo.out',
+                scrollTrigger: {
+                  trigger: card,
+                  start: 'top 85%',
+                  toggleActions: 'play none none reverse',
+                },
+              }
+            );
+          }
+
+          if (period) {
+            gsap.fromTo(
+              period,
+              { x: index % 2 === 0 ? 100 : -100, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'expo.out',
+                scrollTrigger: {
+                  trigger: period,
+                  start: 'top 85%',
+                  toggleActions: 'play none none reverse',
+                },
+              }
+            );
+          }
         });
       }
 
@@ -165,7 +188,7 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <div
                 key={exp.company}
-                className={`timeline-item relative flex flex-col md:flex-row ${
+                className={`timeline-item relative flex flex-col ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 } items-start`}
               >
@@ -173,7 +196,7 @@ export default function Experience() {
                 <div className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full bg-background border-4 border-[#5B8DF7] md:-translate-x-1/2 z-10 glow-blue mt-8 md:mt-10" />
 
                 {/* Content Card */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${
+                <div className={`timeline-card ml-12 md:ml-0 md:w-1/2 ${
                   index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'
                 }`}>
                   <div className="glass rounded-2xl p-6 sm:p-8 hover:bg-[#5B8DF7]/[0.02] transition-all duration-500 group border border-white/10 hover:border-[#5B8DF7]/30 shadow-2xl shadow-black/20">
@@ -252,8 +275,8 @@ export default function Experience() {
                 </div>
 
                 {/* Period & Location - Desktop Only */}
-                <div className={`hidden md:flex md:w-1/2 mt-10 ${
-                  index % 2 === 0 ? 'pl-16 justify-start' : 'pr-16 justify-end text-right'
+                <div className={`timeline-period hidden md:flex md:w-1/2 mt-10 ${
+                  index % 2 === 0 ? 'md:pl-16 justify-start' : 'md:pr-16 justify-end text-right'
                 }`}>
                   <div className="flex flex-col gap-4">
                     <div className={`flex items-center gap-3 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
