@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const experiences = [
   {
     company: 'Noduco Software Private Limited',
-    role: 'Software Engineer (Backend)',
+    role: 'Software Developer (Backend)',
     period: 'July 2024 - Present',
     location: 'Remote',
     type: 'Full-time',
@@ -89,23 +89,17 @@ export default function Experience() {
       const items = timelineRef.current?.querySelectorAll('.timeline-item');
       if (items) {
         items.forEach((item, index) => {
-          const isMobile = window.innerWidth < 768;
           gsap.fromTo(
             item,
-            { 
-              x: isMobile ? 0 : (index % 2 === 0 ? -50 : 50), 
-              y: isMobile ? 30 : 0,
-              opacity: 0 
-            },
+            { x: index % 2 === 0 ? -50 : 50, opacity: 0 },
             {
               x: 0,
-              y: 0,
               opacity: 1,
               duration: 0.8,
               ease: 'expo.out',
               scrollTrigger: {
                 trigger: item,
-                start: 'top 85%',
+                start: 'top 75%',
                 toggleActions: 'play none none reverse',
               },
             }
@@ -162,94 +156,96 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        <div ref={timelineRef} className="relative max-w-4xl mx-auto">
+        <div ref={timelineRef} className="relative max-w-5xl mx-auto">
           {/* Timeline Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-1/2 origin-top timeline-line" />
 
           {/* Experience Items */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
               <div
                 key={exp.company}
-                className={`timeline-item relative flex flex-col md:flex-row gap-8 ${
+                className={`timeline-item relative flex flex-col md:flex-row ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#5B8DF7] border-4 border-background md:-translate-x-1/2 z-10 glow-blue" />
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#5B8DF7] border-4 border-background md:-translate-x-1/2 z-10 glow-blue mt-8 md:mt-10" />
 
                 {/* Content Card */}
-                <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                <div className={`ml-12 md:ml-0 md:w-1/2 ${
+                  index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
                 }`}>
-                  <div className="glass rounded-2xl p-6 sm:p-8 hover:bg-[#5B8DF7]/5 transition-colors group">
+                  <div className="glass rounded-2xl p-6 sm:p-8 hover:bg-[#5B8DF7]/5 transition-all duration-500 group border border-white/10 hover:border-[#5B8DF7]/30 shadow-xl shadow-black/5">
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                       <div>
-                        <h3 className="text-xl font-bold mb-1 group-hover:text-[#5B8DF7] transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-bold mb-1 group-hover:text-[#5B8DF7] transition-colors">
                           {exp.role}
                         </h3>
-                        <div className="flex items-center gap-2 text-muted-foreground">
+                        <div className="flex items-center gap-2 text-[#5B8DF7] font-semibold">
                           <Building2 className="h-4 w-4" />
-                          <span className="font-medium">{exp.company}</span>
+                          <span>{exp.company}</span>
                         </div>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${
                         exp.type === 'Internship' 
-                          ? 'bg-purple-500/20 text-purple-500' 
-                          : 'bg-[#5B8DF7]/20 text-[#5B8DF7]'
+                          ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' 
+                          : 'bg-[#5B8DF7]/10 text-[#5B8DF7] border border-[#5B8DF7]/20'
                       }`}>
                         {exp.type}
                       </span>
                     </div>
 
                     {/* Meta */}
-                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="h-4 w-4" />
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6 pb-6 border-b border-white/5">
+                      <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-lg">
+                        <Calendar className="h-3.5 w-3.5 text-[#5B8DF7]" />
                         <span>{exp.period}</span>
                       </div>
-                      <div className="flex items-center gap-1.5">
-                        <MapPin className="h-4 w-4" />
+                      <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-lg">
+                        <MapPin className="h-3.5 w-3.5 text-[#5B8DF7]" />
                         <span>{exp.location}</span>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{exp.description}</p>
 
                     {/* Achievements */}
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 mb-2">
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-4">
                         <Trophy className="h-4 w-4 text-[#5B8DF7]" />
-                        <span className="text-sm font-semibold">Key Achievements</span>
+                        <span className="text-sm font-bold uppercase tracking-tight">Key Contributions</span>
                       </div>
-                      <ul className="space-y-1.5">
-                        {exp.achievements.slice(0, 5).map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#5B8DF7] mt-1.5 flex-shrink-0" />
-                            <span className="text-muted-foreground">{achievement}</span>
+                      <ul className="space-y-3">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#5B8DF7] mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(91,141,247,0.8)]" />
+                            <span className="text-muted-foreground leading-snug">{achievement}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Skills */}
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 rounded-full bg-secondary text-xs font-medium"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                    <div className="pt-6 border-t border-white/5">
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="px-3 py-1 rounded-lg bg-white/5 text-[10px] sm:text-xs font-semibold text-muted-foreground hover:text-[#5B8DF7] hover:bg-[#5B8DF7]/10 transition-colors border border-white/5"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Empty space for alternating layout */}
-                <div className="hidden md:block md:w-[calc(50%-2rem)]" />
+                <div className="hidden md:block md:w-1/2" />
               </div>
             ))}
           </div>
